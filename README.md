@@ -1,4 +1,4 @@
-# Codinc — Marketing Site
+# Codinc
 
 A one-page marketing site for Codinc, built with **Next.js (App Router) + TypeScript + Tailwind CSS** and a few **shadcn/ui** primitives. Dark theme, Peacock accent (`#067A86` family), with an animated terminal hero and a draggable “work” slider.
 
