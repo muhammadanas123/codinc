@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---- Brand palette (exact values from approved dark design) ---- */
+    --peacock: 186 87% 36%; /* #0c9bab */
+    --peacock-deep: 186 91% 27%; /* #067a86 */
+    --ink: 210 29% 5%; /* #0a0e12 */
+    --panel: 210 29% 8%; /* #0f151b */
+    --panel-2: 208 28% 10%; /* #131b22 */
+    --line: 208 25% 15%; /* #1d2730 */
+    --paper: 190 21% 95%; /* #eef3f4 */
+    --mist: 209 12% 57%; /* #8593a0 */
+    --mist-dim: 206 12% 41%; /* #5d6b76 */
+
+    /* ---- shadcn semantic tokens mapped onto the brand palette ---- */
+    --background: var(--ink);
+    --foreground: var(--paper);
+    --card: var(--panel);
+    --card-foreground: var(--paper);
+    --primary: var(--peacock);
+    --primary-foreground: 192 90% 6%; /* near-black teal for text on peacock */
+    --secondary: var(--panel-2);
+    --secondary-foreground: var(--paper);
+    --muted: var(--panel-2);
+    --muted-foreground: var(--mist);
+    --border: var(--line);
+    --input: var(--line);
+    --ring: var(--peacock);
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-paper font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: hsl(var(--peacock));
+    color: #031013;
+  }
+}
+
+@layer components {
+  /* Scroll reveal — progressive enhancement; visible by default if JS/observer absent */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
