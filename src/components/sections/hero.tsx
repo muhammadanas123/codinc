@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative pb-[70px] pt-[88px]">
+    <section className="relative overflow-hidden pb-[70px] pt-[88px]">
       {/* ambient glow */}
       <div
         aria-hidden
