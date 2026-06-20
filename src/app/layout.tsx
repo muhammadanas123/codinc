@@ -38,13 +38,18 @@ const jetbrainsMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: `${siteConfig.name} \u2014 ${siteConfig.tagline}`,
   description:
     "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right \u2014 and done.",
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
     title: `${siteConfig.name} \u2014 ${siteConfig.tagline}`,
     description:
       "A product & engineering studio. We design, build, and run web and mobile applications.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     type: "website",
   },
 };
