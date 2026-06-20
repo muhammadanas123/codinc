@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/content";
 
 const fieldClasses =
-  "w-full rounded-[11px] border border-line bg-panel-2 px-4 py-3 text-[15px] text-paper placeholder:text-mist-dim focus:border-peacock focus:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "w-full rounded-[11px] border border-line bg-panel-2 px-4 py-3 text-[15px] text-paper placeholder:text-mist-dim focus:border-peacock focus:outline-hidden focus-visible:ring-2 focus-visible:ring-ring";
 
 /** Reads `#contact?member=NAME` from the URL hash, if present. */
 function memberFromHash(): string {
