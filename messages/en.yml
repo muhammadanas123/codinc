@@ -112,7 +112,7 @@ about:
 
 team:
   eyebrow: "// our team"
-  title: "The people who build it."
+  title: "Who you'll actually work with."
   sub: "A small, senior team of engineers and designers. Tap anyone to see what they bring."
   viewProfile: "View {name}'s profile"
   yearsExperience: "{years}+ yrs experience"
@@ -124,14 +124,14 @@ team:
       avatar: "/team/anas-farooqi.svg"
       yearsExperience: 8
       bio: "Anas founded Codinc to build software the way it should be built — small senior teams, real ownership, and a bias for shipping. He sets the technical direction and stays close to every engagement, making sure each project gets the attention it deserves. Clients keep coming back for the straight answers as much as the code."
-      skills: ["Product Strategy", "Architecture", "TypeScript", "Cloud", "Team Leadership"]
+      skills: ["Product Strategy", "Architecture", "TypeScript", "Cloud", "Team Leadership", "React", "NestJS", "Next.js", "Redux", "Supabase", "TypeORM", "Prisma", "TanStack Query", "Sequelize", "AWS", "GCP", "Docker", "Rails", "RAG", "LLMs"]
     - slug: "bilal-farooqi"
       name: "Bilal Farooqi"
       role: "Co‑founder & COO"
       avatar: "/team/bilal-farooqi.svg"
       yearsExperience: 5
-      bio: "Bilal runs the operation behind the work — delivery, process, and the day‑to‑day that keeps projects on track. He turns ambitious roadmaps into predictable shipping schedules and is the person clients talk to when they need things to just happen. Calm under pressure, relentless about follow‑through."
-      skills: ["Operations", "Delivery", "Client Success", "Process", "Hiring"]
+      bio: "Bilal runs the operation behind the work — delivery, process, and the day‑to‑day that keeps projects on track. He turns ambitious roadmaps into predictable shipping schedules and is the person clients talk to when they need things to just happen."
+      skills: ["Operations", "Delivery", "Client Success", "Process", "React", "Next.js", "NestJS", "Supabase", "AWS", "Docker", "RAG", "LLMs", "n8n Workflows"]
 
 contact:
   heading: "Have something to build?"
