@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +16,7 @@ import {
 import type { TeamMember } from "@/lib/content";
 
 export function TeamMemberDialog({ member }: { member: TeamMember }) {
+  const t = useTranslations("team");
   const [open, setOpen] = useState(false);
 
   function handleHire() {
@@ -45,7 +47,7 @@ export function TeamMemberDialog({ member }: { member: TeamMember }) {
         <Card
           role="button"
           tabIndex={0}
-          aria-label={`View ${member.name}'s profile`}
+          aria-label={t("viewProfile", { name: member.name })}
           className="reveal group cursor-pointer text-center transition-all duration-[250ms] hover:-translate-y-1 hover:border-peacock focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         >
           <CardContent className="flex flex-col items-center">
@@ -80,7 +82,7 @@ export function TeamMemberDialog({ member }: { member: TeamMember }) {
             {member.role}
           </p>
           <p className="mt-1 font-mono text-xs tracking-[0.04em] text-mist">
-            {member.yearsExperience}+ yrs experience
+            {t("yearsExperience", { years: member.yearsExperience })}
           </p>
           <DialogDescription className="mt-5 text-left">
             {member.bio}
@@ -100,7 +102,7 @@ export function TeamMemberDialog({ member }: { member: TeamMember }) {
             className="mt-7 w-full"
             onClick={handleHire}
           >
-            Hire me →
+            {t("hireMe")}
           </Button>
         </div>
       </DialogContent>

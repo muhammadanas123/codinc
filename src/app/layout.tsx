@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
 
-import { siteConfig } from "@/lib/content";
 import "./globals.css";
 
 const spaceGrotesk = localFont({
@@ -37,32 +38,41 @@ const jetbrainsMono = localFont({
   fallback: ["monospace"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: `${siteConfig.name} \u2014 ${siteConfig.tagline}`,
-  description:
-    "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right \u2014 and done.",
-  alternates: { canonical: "/" },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: `${siteConfig.name} \u2014 ${siteConfig.tagline}`,
-    description:
-      "A product & engineering studio. We design, build, and run web and mobile applications.",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    type: "website",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("site");
+  const title = `${t("name")} \u2014 ${t("tagline")}`;
 
-export default function RootLayout({
+  return {
+    metadataBase: new URL(t("url")),
+    title,
+    description: t("metaDescription"),
+    alternates: { canonical: "/" },
+    robots: { index: true, follow: true },
+    openGraph: {
+      title,
+      description: t("ogDescription"),
+      url: t("url"),
+      siteName: t("name"),
+      type: "website",
+    },
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const messages = await getMessages();
+
   return (
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

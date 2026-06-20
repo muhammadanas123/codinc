@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/content";
 
 const fieldClasses =
   "w-full rounded-[11px] border border-line bg-panel-2 px-4 py-3 text-[15px] text-paper placeholder:text-mist-dim focus:border-peacock focus:outline-hidden focus-visible:ring-2 focus-visible:ring-ring";
@@ -17,12 +17,9 @@ function memberFromHash(): string {
   return member ? decodeURIComponent(member) : "";
 }
 
-/** Seed message text when a visitor arrives via a member's "Hire me" button. */
-function hireMessage(member: string): string {
-  return `Hi, I'd like to work with ${member} on `;
-}
-
 export function ContactForm() {
+  const t = useTranslations("contact.form");
+  const tSite = useTranslations("site");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -32,26 +29,26 @@ export function ContactForm() {
   // The member seeds the message — the Name field stays the visitor's own name.
   useEffect(() => {
     const fromHash = memberFromHash();
-    if (fromHash) setMessage(hireMessage(fromHash));
+    if (fromHash) setMessage(t("hireMessage", { member: fromHash }));
 
     function onHire(event: Event) {
       const detail = (event as CustomEvent<{ member?: string }>).detail;
-      if (detail?.member) setMessage(hireMessage(detail.member));
+      if (detail?.member) setMessage(t("hireMessage", { member: detail.member }));
     }
 
     window.addEventListener("codinc:hire", onHire);
     return () => window.removeEventListener("codinc:hire", onHire);
-  }, []);
+  }, [t]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const subject = `Project inquiry${name ? ` — ${name}` : ""}`;
+    const subject = name ? t("subjectWithName", { name }) : t("subjectPlain");
     const lines: string[] = [];
     if (name) lines.push(`Name: ${name}`);
     if (email) lines.push(`Email: ${email}`);
     lines.push("", message);
     const body = lines.join("\n");
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
+    window.location.href = `mailto:${tSite("email")}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
   }
@@ -67,14 +64,14 @@ export function ContactForm() {
             htmlFor="contact-name"
             className="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-mist"
           >
-            Name
+            {t("nameLabel")}
           </label>
           <input
             id="contact-name"
             name="name"
             type="text"
             autoComplete="name"
-            placeholder="Your name"
+            placeholder={t("namePlaceholder")}
             value={name}
             onChange={(event) => setName(event.target.value)}
             className={fieldClasses}
@@ -85,7 +82,7 @@ export function ContactForm() {
             htmlFor="contact-email"
             className="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-mist"
           >
-            Email
+            {t("emailLabel")}
           </label>
           <input
             id="contact-email"
@@ -93,7 +90,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
-            placeholder="you@company.com"
+            placeholder={t("emailPlaceholder")}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             className={fieldClasses}
@@ -104,14 +101,14 @@ export function ContactForm() {
             htmlFor="contact-message"
             className="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-mist"
           >
-            What are you building?
+            {t("messageLabel")}
           </label>
           <textarea
             id="contact-message"
             name="message"
             required
             rows={4}
-            placeholder="A few sentences about your project…"
+            placeholder={t("messagePlaceholder")}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             className={`${fieldClasses} resize-y`}
@@ -119,7 +116,7 @@ export function ContactForm() {
         </div>
       </div>
       <Button type="submit" variant="primary" className="mt-6 w-full">
-        Start a project →
+        {t("submit")}
       </Button>
     </form>
   );

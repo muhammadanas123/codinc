@@ -1,17 +1,22 @@
+import { getTranslations } from "next-intl/server";
+
 import { Container } from "@/components/container";
 import { SectionHead } from "@/components/section-head";
 import { Card, CardContent } from "@/components/ui/card";
-import { services } from "@/lib/content";
+import type { Service } from "@/lib/content";
 
-export function Services() {
+export async function Services() {
+  const t = await getTranslations("services");
+  const services = t.raw("items") as Service[];
+
   return (
     <section id="services" className="py-24">
       <Container>
         <SectionHead
           className="reveal"
-          eyebrow="// what we do"
-          title="A full team, from first sketch to production."
-          sub="No hand\u2011offs between strangers. The people who design your product are the ones who build and maintain it."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          sub={t("sub")}
         />
         <div className="grid grid-cols-1 gap-[18px] md:grid-cols-3">
           {services.map((service) => (

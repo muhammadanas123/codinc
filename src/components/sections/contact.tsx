@@ -1,8 +1,12 @@
+import { getTranslations } from "next-intl/server";
+
 import { Container } from "@/components/container";
 import { ContactForm } from "@/components/contact-form";
-import { siteConfig } from "@/lib/content";
 
-export function Contact() {
+export async function Contact() {
+  const t = await getTranslations("contact");
+  const tSite = await getTranslations("site");
+
   return (
     <section id="contact" className="pb-24">
       <Container>
@@ -16,15 +20,12 @@ export function Contact() {
             }}
           />
           <h2 className="relative mb-[18px] font-display text-[clamp(28px,4vw,46px)] font-bold tracking-[-0.02em]">
-            Have something to build?
+            {t("heading")}
           </h2>
-          <p className="relative mb-2 text-[17px] text-mist">
-            Tell us what you&apos;re working on. We&apos;ll tell you honestly if
-            we&apos;re the right team for it.
-          </p>
+          <p className="relative mb-2 text-[17px] text-mist">{t("paragraph")}</p>
           <ContactForm />
           <div className="relative mt-[26px] font-mono text-sm text-peacock">
-            {siteConfig.email}
+            {tSite("email")}
           </div>
         </div>
       </Container>

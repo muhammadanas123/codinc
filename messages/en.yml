@@ -1,0 +1,154 @@
+site:
+  name: "Codinc"
+  tagline: "software, shipped"
+  email: "hello@codinc.co"
+  url: "https://codinc.co"
+  location: "Lahore, PK"
+  metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
+  ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
+
+nav:
+  links:
+    - label: "Services"
+      href: "#services"
+    - label: "Work"
+      href: "#work"
+    - label: "About"
+      href: "#about"
+  cta: "Start a project"
+  toggleMenu: "Toggle menu"
+  homeAriaLabel: "Codinc home"
+
+common:
+  close: "Close"
+
+hero:
+  eyebrow: "Software studio · {location}"
+  headingPrefix: "We turn ideas into software that"
+  headingEmphasis: "ships"
+  paragraph: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
+  ctaPrimary: "Start a project →"
+  ctaSecondary: "See our work"
+
+terminal:
+  windowTitle: "~/codinc — zsh"
+  promptLabel: "codinc ~ %"
+  whoamiCommand: " whoami"
+  whoamiAnswer: "a product & engineering studio"
+  process: "# design · build · ship · run"
+  buildCommand: " run build --your-idea"
+  checks: ["scoped", "designed", "built", "shipped"]
+
+industries:
+  heading: "Trusted by teams building in"
+  items: ["Fintech", "Health", "Logistics", "E‑commerce", "SaaS"]
+
+services:
+  eyebrow: "// what we do"
+  title: "A full team, from first sketch to production."
+  sub: "No hand‑offs between strangers. The people who design your product are the ones who build and maintain it."
+  items:
+    - num: "01"
+      title: "Web & mobile apps"
+      description: "Custom applications built to last — from internal tools to customer‑facing products, on the web and on phones."
+      tags: ["React", "Next.js", "React Native"]
+    - num: "02"
+      title: "Cloud & DevOps"
+      description: "We set up the infrastructure, pipelines, and monitoring so your software ships often and stays up."
+      tags: ["AWS", "Docker", "CI/CD"]
+    - num: "03"
+      title: "AI integration"
+      description: "Practical AI woven into real products — search, assistants, and automation that earn their place."
+      tags: ["LLMs", "RAG", "Automation"]
+
+work:
+  eyebrow: "// selected work"
+  title: "Things we've contributed and shipped."
+  sub: "A sample of products we've helped design, build, and ship — explore them live."
+  visitSite: "Visit site"
+  previous: "Previous"
+  next: "Next"
+  goToSlide: "Go to slide {number}"
+  visitAriaLabel: "{title} — visit site (opens in a new tab)"
+  items:
+    - slug: "purplecarrot.com"
+      label: "Food · E‑commerce"
+      title: "Purple Carrot"
+      description: "A plant‑based meal‑kit service — recipes, subscriptions, and a checkout flow tuned to keep weekly orders effortless."
+      url: "https://www.purplecarrot.com"
+      visual: "v1"
+    - slug: "cocoli.com"
+      label: "Retail · Marketplace"
+      title: "Cocoli"
+      description: "A curated marketplace for premium furniture and design, connecting independent sellers with buyers across Europe."
+      url: "https://www.cocoli.com/en/de/"
+      visual: "v2"
+    - slug: "colochousing.com"
+      label: "PropTech · Platform"
+      title: "Colo Housing"
+      description: "A modern co‑living and housing platform that streamlines listings, applications, and tenant management end to end."
+      url: "https://www.colochousing.com/"
+      visual: "v3"
+    - slug: "crystalcommerce.com"
+      label: "E‑commerce · Platform"
+      title: "Crystal Commerce"
+      description: "Commerce infrastructure for specialty and hobby retailers, syncing inventory and orders across thousands of storefronts."
+      url: "https://www.crystalcommerce.com/"
+      visual: "v4"
+
+about:
+  eyebrow: "// who we are"
+  title: "Small team. Senior hands. Real ownership."
+  paragraph1: "Codinc is a tight engineering studio. We take on a focused number of projects so each one gets people who actually care about the outcome."
+  paragraph2: "We work the way good software gets made: short feedback loops, working software early, and a bias for shipping over talking. When we hand something over, it's documented, tested, and yours."
+  stats:
+    - value: "40+"
+      label: "products shipped"
+    - value: "8 yrs"
+      label: "avg. engineer experience"
+    - value: "100%"
+      label: "code ownership to you"
+    - value: "<24h"
+      label: "response time"
+
+team:
+  eyebrow: "// our team"
+  title: "The people who build it."
+  sub: "A small bench of senior engineers and designers. Tap anyone to see what they bring — and to put them on your project."
+  viewProfile: "View {name}'s profile"
+  yearsExperience: "{years}+ yrs experience"
+  hireMe: "Hire me →"
+  members:
+    - slug: "anas-farooqi"
+      name: "Anas Farooqi"
+      role: "Founder & CEO"
+      avatar: "/team/anas-farooqi.svg"
+      yearsExperience: 8
+      bio: "Anas founded Codinc to build software the way it should be built — small senior teams, real ownership, and a bias for shipping. He sets the technical direction and stays close to every engagement, making sure each project gets the attention it deserves. Clients keep coming back for the straight answers as much as the code."
+      skills: ["Product Strategy", "Architecture", "TypeScript", "Cloud", "Team Leadership"]
+    - slug: "bilal-farooqi"
+      name: "Bilal Farooqi"
+      role: "Co‑founder & COO"
+      avatar: "/team/bilal-farooqi.svg"
+      yearsExperience: 5
+      bio: "Bilal runs the operation behind the work — delivery, process, and the day‑to‑day that keeps projects on track. He turns ambitious roadmaps into predictable shipping schedules and is the person clients talk to when they need things to just happen. Calm under pressure, relentless about follow‑through."
+      skills: ["Operations", "Delivery", "Client Success", "Process", "Hiring"]
+
+contact:
+  heading: "Have something to build?"
+  paragraph: "Tell us what you're working on. We'll tell you honestly if we're the right team for it."
+  form:
+    nameLabel: "Name"
+    namePlaceholder: "Your name"
+    emailLabel: "Email"
+    emailPlaceholder: "you@company.com"
+    messageLabel: "What are you building?"
+    messagePlaceholder: "A few sentences about your project…"
+    submit: "Start a project →"
+    hireMessage: "Hi, I'd like to work with {member} on "
+    subjectWithName: "Project inquiry — {name}"
+    subjectPlain: "Project inquiry"
+
+footer:
+  contact: "Contact"
+  copyright: "© 2026 Codinc. Built in Lahore, shipped everywhere."
