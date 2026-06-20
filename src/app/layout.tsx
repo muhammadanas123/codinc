@@ -15,10 +15,10 @@ const spaceGrotesk = localFont({
 
 const manrope = localFont({
   src: [
-    { path: "./fonts/Manrope-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/Manrope-Medium.ttf", weight: "500", style: "normal" },
-    { path: "./fonts/Manrope-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "./fonts/Manrope-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/Manrope-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Manrope-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Manrope-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/Manrope-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-manrope",
   display: "swap",
