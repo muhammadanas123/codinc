@@ -1,55 +1,54 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface Segment {
   text: string;
   className: string;
 }
 
-/** Each line is an array of colored segments — plain text, no HTML entities. */
-const LINES: { segments: Segment[]; speed: number }[] = [
-  {
-    segments: [
-      { text: "codinc ~ %", className: "text-peacock" },
-      { text: " whoami", className: "text-paper" },
-    ],
-    speed: 60,
-  },
-  {
-    segments: [
-      { text: "a product & engineering studio", className: "text-paper" },
-    ],
-    speed: 18,
-  },
-  {
-    segments: [
-      { text: "# design \u00b7 build \u00b7 ship \u00b7 run", className: "text-mist-dim" },
-    ],
-    speed: 18,
-  },
-  {
-    segments: [
-      { text: "codinc ~ %", className: "text-peacock" },
-      { text: " run build --your-idea", className: "text-paper" },
-    ],
-    speed: 60,
-  },
-  {
-    segments: [
-      { text: "\u2713 scoped", className: "text-[#28c840]" },
-      { text: "  ", className: "" },
-      { text: "\u2713 designed", className: "text-[#28c840]" },
-      { text: "  ", className: "" },
-      { text: "\u2713 built", className: "text-[#28c840]" },
-      { text: "  ", className: "" },
-      { text: "\u2713 shipped", className: "text-[#28c840]" },
-    ],
-    speed: 30,
-  },
-];
-
 export function Terminal() {
+  const t = useTranslations("terminal");
+  const checks = useMemo(() => t.raw("checks") as string[], [t]);
+  const promptLabel = t("promptLabel");
+
+  /** Each line is an array of colored segments — plain text, no HTML entities. */
+  const LINES = useMemo<{ segments: Segment[]; speed: number }[]>(
+    () => [
+      {
+        segments: [
+          { text: promptLabel, className: "text-peacock" },
+          { text: t("whoamiCommand"), className: "text-paper" },
+        ],
+        speed: 60,
+      },
+      {
+        segments: [{ text: t("whoamiAnswer"), className: "text-paper" }],
+        speed: 18,
+      },
+      {
+        segments: [{ text: t("process"), className: "text-mist-dim" }],
+        speed: 18,
+      },
+      {
+        segments: [
+          { text: promptLabel, className: "text-peacock" },
+          { text: t("buildCommand"), className: "text-paper" },
+        ],
+        speed: 60,
+      },
+      {
+        segments: checks.flatMap((check, i) => [
+          ...(i > 0 ? [{ text: "  ", className: "" }] : []),
+          { text: `✓ ${check}`, className: "text-[#28c840]" },
+        ]),
+        speed: 30,
+      },
+    ],
+    [t, promptLabel, checks],
+  );
+
   const bodyRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
@@ -112,7 +111,7 @@ export function Terminal() {
       const div = makeLineEl();
       const prompt = document.createElement("span");
       prompt.className = "text-peacock";
-      prompt.textContent = "codinc ~ %";
+      prompt.textContent = promptLabel;
       const cursor = document.createElement("span");
       cursor.className =
         "ml-2 inline-block h-[18px] w-[9px] translate-y-[3px] animate-blink bg-peacock align-baseline";
@@ -158,7 +157,7 @@ export function Terminal() {
     timers.push(start);
 
     return () => timers.forEach((t) => window.clearTimeout(t));
-  }, [started]);
+  }, [started, LINES, promptLabel]);
 
   return (
     <div
@@ -170,7 +169,7 @@ export function Terminal() {
         <i className="inline-block h-[11px] w-[11px] rounded-full bg-[#febc2e]" />
         <i className="inline-block h-[11px] w-[11px] rounded-full bg-[#28c840]" />
         <span className="ml-[14px] font-mono text-xs text-mist-dim">
-          ~/codinc — zsh
+          {t("windowTitle")}
         </span>
       </div>
       <div

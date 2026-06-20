@@ -1,27 +1,28 @@
-import { Container } from "@/components/container";
-import { stats } from "@/lib/content";
+import { getTranslations } from "next-intl/server";
 
-export function About() {
+import { Container } from "@/components/container";
+import type { Stat } from "@/lib/content";
+
+export async function About() {
+  const t = await getTranslations("about");
+  const stats = t.raw("stats") as Stat[];
+
   return (
     <section id="about" className="pb-24">
       <Container>
         <div className="grid grid-cols-1 items-center gap-[60px] md:grid-cols-[1.2fr_0.8fr]">
           <div className="reveal">
             <p className="mb-[14px] font-mono text-[13px] uppercase tracking-[0.16em] text-peacock">
-              {"// who we are"}
+              {t("eyebrow")}
             </p>
             <h2 className="mb-6 max-w-[18ch] font-display text-[clamp(28px,4vw,44px)] font-bold leading-[1.08] tracking-[-0.02em]">
-              Small team. Senior hands. Real ownership.
+              {t("title")}
             </h2>
             <p className="mb-[18px] text-[17px] leading-[1.75] text-paper">
-              Codinc is a tight engineering studio. We take on a focused number
-              of projects so each one gets people who actually care about the
-              outcome.
+              {t("paragraph1")}
             </p>
             <p className="text-[15.5px] leading-[1.75] text-mist">
-              We work the way good software gets made: short feedback loops,
-              working software early, and a bias for shipping over talking. When
-              we hand something over, it&apos;s documented, tested, and yours.
+              {t("paragraph2")}
             </p>
           </div>
 

@@ -1,20 +1,25 @@
+import { getTranslations } from "next-intl/server";
+
 import { Container } from "@/components/container";
 import { SectionHead } from "@/components/section-head";
 import { TeamMemberDialog } from "@/components/team-member-dialog";
-import { team } from "@/lib/content";
+import type { TeamMember } from "@/lib/content";
 
-export function Team() {
+export async function Team() {
+  const t = await getTranslations("team");
+  const members = t.raw("members") as TeamMember[];
+
   return (
     <section id="team" className="pb-24">
       <Container>
         <SectionHead
           className="reveal"
-          eyebrow="// our team"
-          title="The people who build it."
-          sub="A small bench of senior engineers and designers. Tap anyone to see what they bring — and to put them on your project."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          sub={t("sub")}
         />
         <div className="mx-auto grid max-w-[760px] grid-cols-1 gap-[18px] sm:grid-cols-2">
-          {team.map((member) => (
+          {members.map((member) => (
             <TeamMemberDialog key={member.slug} member={member} />
           ))}
         </div>

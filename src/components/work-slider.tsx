@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { caseStudies, type CaseStudy } from "@/lib/content";
+import type { CaseStudy } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 const VISUAL_CLASS: Record<CaseStudy["visual"], string> = {
@@ -17,6 +18,8 @@ const VISUAL_CLASS: Record<CaseStudy["visual"], string> = {
 const GAP = 18;
 
 export function WorkSlider() {
+  const t = useTranslations("work");
+  const caseStudies = t.raw("items") as CaseStudy[];
   const trackRef = useRef<HTMLDivElement>(null);
   const firstCardRef = useRef<HTMLDivElement>(null);
 
@@ -167,7 +170,7 @@ export function WorkSlider() {
                 rel="noopener noreferrer"
                 draggable={false}
                 onClick={handleCardClick}
-                aria-label={`${item.title} — visit site (opens in a new tab)`}
+                aria-label={t("visitAriaLabel", { title: item.title })}
                 className="group/card block rounded-2xl focus-visible:outline-hidden"
               >
                 <div
@@ -189,7 +192,7 @@ export function WorkSlider() {
                     {item.description}
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1 font-mono text-xs text-peacock transition-colors group-hover/card:text-paper">
-                    Visit site
+                    {t("visitSite")}
                     <ArrowUpRight size={14} />
                   </span>
                 </div>
@@ -205,7 +208,7 @@ export function WorkSlider() {
             <button
               key={i}
               type="button"
-              aria-label={`Go to slide ${i + 1}`}
+              aria-label={t("goToSlide", { number: i + 1 })}
               onClick={() => goTo(i)}
               className={cn(
                 "h-[9px] rounded-full transition-all duration-[250ms]",
@@ -217,7 +220,7 @@ export function WorkSlider() {
         <div className="flex gap-[10px]">
           <button
             type="button"
-            aria-label="Previous"
+            aria-label={t("previous")}
             onClick={prev}
             disabled={page <= 0}
             className="flex h-[46px] w-[46px] items-center justify-center rounded-[11px] border border-line bg-panel text-paper transition-colors hover:border-peacock hover:text-peacock disabled:cursor-default disabled:opacity-30 disabled:hover:border-line disabled:hover:text-paper"
@@ -226,7 +229,7 @@ export function WorkSlider() {
           </button>
           <button
             type="button"
-            aria-label="Next"
+            aria-label={t("next")}
             onClick={next}
             disabled={page >= pages - 1}
             className="flex h-[46px] w-[46px] items-center justify-center rounded-[11px] border border-line bg-panel text-paper transition-colors hover:border-peacock hover:text-peacock disabled:cursor-default disabled:opacity-30 disabled:hover:border-line disabled:hover:text-paper"

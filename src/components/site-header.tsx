@@ -1,20 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/container";
 import { BrandMark } from "@/components/brand-mark";
-import { navLinks } from "@/lib/content";
+import type { NavLink } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("nav");
+  const navLinks = t.raw("links") as NavLink[];
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ink/70 backdrop-blur-[14px]">
       <Container>
         <nav className="flex h-[70px] items-center justify-between">
-          <a href="#" aria-label={"Codinc home"}>
+          <a href="#" aria-label={t("homeAriaLabel")}>
             <BrandMark />
           </a>
 
@@ -32,13 +35,13 @@ export function SiteHeader() {
               href="#contact"
               className="rounded-[9px] border border-peacock px-4 py-[9px] font-mono text-[13px] text-peacock transition-colors hover:bg-peacock hover:text-[#031013]"
             >
-              Start a project
+              {t("cta")}
             </a>
           </div>
 
           <button
             type="button"
-            aria-label="Toggle menu"
+            aria-label={t("toggleMenu")}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
             className="flex flex-col gap-[5px] md:hidden"
@@ -74,7 +77,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex w-fit rounded-[9px] border border-peacock px-4 py-[9px] font-mono text-[13px] text-peacock"
             >
-              Start a project
+              {t("cta")}
             </a>
           </div>
         </Container>
