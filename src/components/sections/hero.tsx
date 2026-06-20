@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 
 export async function Hero() {
   const t = await getTranslations("hero");
-  const tSite = await getTranslations("site");
 
   return (
     <section className="relative overflow-hidden pb-[70px] pt-[88px]">
@@ -22,7 +21,7 @@ export async function Hero() {
       <Container>
         <p className="mb-6 flex items-center gap-[10px] font-mono text-[13px] uppercase tracking-[0.18em] text-peacock">
           <span className="h-px w-7 bg-peacock" />
-          {t("eyebrow", { location: tSite("location") })}
+          {t("eyebrow")}
         </p>
 
         <h1 className="mb-[26px] max-w-[14ch] font-display text-[clamp(40px,7vw,82px)] font-bold leading-[1.02] tracking-[-0.03em]">

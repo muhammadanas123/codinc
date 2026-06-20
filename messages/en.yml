@@ -3,7 +3,6 @@ site:
   tagline: "software, shipped"
   email: "hello@codinc.co"
   url: "https://codinc.co"
-  location: "Lahore, PK"
   metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
   ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
 
@@ -23,7 +22,7 @@ common:
   close: "Close"
 
 hero:
-  eyebrow: "Software studio · {location}"
+  eyebrow: "Software studio"
   headingPrefix: "We turn ideas into software that"
   headingEmphasis: "ships"
   paragraph: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
@@ -114,7 +113,7 @@ about:
 team:
   eyebrow: "// our team"
   title: "The people who build it."
-  sub: "A small bench of senior engineers and designers. Tap anyone to see what they bring — and to put them on your project."
+  sub: "A small, senior team of engineers and designers. Tap anyone to see what they bring."
   viewProfile: "View {name}'s profile"
   yearsExperience: "{years}+ yrs experience"
   hireMe: "Hire me →"
@@ -151,4 +150,4 @@ contact:
 
 footer:
   contact: "Contact"
-  copyright: "© 2026 Codinc. Built in Lahore, shipped everywhere."
+  copyright: "© 2026 Codinc. All rights reserved."
