@@ -6,6 +6,7 @@
 export const siteConfig = {
   name: "Codinc",
   email: "hello@codinc.co",
+  url: "https://codinc.co",
   location: "Lahore, PK",
   tagline: "software, shipped",
 } as const;

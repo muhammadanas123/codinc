@@ -8,7 +8,7 @@ export function About() {
         <div className="grid grid-cols-1 items-center gap-[60px] md:grid-cols-[1.2fr_0.8fr]">
           <div className="reveal">
             <p className="mb-[14px] font-mono text-[13px] uppercase tracking-[0.16em] text-peacock">
-              // who we are
+              {"// who we are"}
             </p>
             <h2 className="mb-6 max-w-[18ch] font-display text-[clamp(28px,4vw,44px)] font-bold leading-[1.08] tracking-[-0.02em]">
               Small team. Senior hands. Real ownership.
