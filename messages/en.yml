@@ -1,7 +1,7 @@
 site:
   name: "Codinc"
   tagline: "software, shipped"
-  email: "hello@codinc.co"
+  email: "info@codinc.co"
   url: "https://codinc.co"
   metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
   ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
@@ -147,6 +147,17 @@ contact:
     hireMessage: "Hi, I'd like to work with {member} on "
     subjectWithName: "Project inquiry — {name}"
     subjectPlain: "Project inquiry"
+    sending: "Sending…"
+    success: "Thanks — we'll be in touch shortly."
+    error: "Something went wrong. Please email us directly at info@codinc.co."
+  autoReply:
+    subject: "Thanks for reaching out to Codinc"
+    body: |
+      Hi {name},
+
+      Thanks for reaching out to Codinc — we've received your message and will get back to you within 24 hours. Feel free to reply to this email with anything else in the meantime.
+
+      — The Codinc team
 
 footer:
   contact: "Contact"
