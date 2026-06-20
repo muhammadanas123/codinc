@@ -46,7 +46,7 @@ export function TeamMemberDialog({ member }: { member: TeamMember }) {
           role="button"
           tabIndex={0}
           aria-label={`View ${member.name}'s profile`}
-          className="reveal group cursor-pointer text-center transition-all duration-[250ms] hover:-translate-y-1 hover:border-peacock focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+          className="reveal group cursor-pointer text-center transition-all duration-[250ms] hover:-translate-y-1 hover:border-peacock focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         >
           <CardContent className="flex flex-col items-center">
             <Image

@@ -168,7 +168,7 @@ export function WorkSlider() {
                 draggable={false}
                 onClick={handleCardClick}
                 aria-label={`${item.title} — visit site (opens in a new tab)`}
-                className="group/card block rounded-2xl focus-visible:outline-none"
+                className="group/card block rounded-2xl focus-visible:outline-hidden"
               >
                 <div
                   className={cn(
