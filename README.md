@@ -15,7 +15,7 @@ A one-page marketing site for Codinc, built with **Next.js (App Router) + TypeSc
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev
 ```
 
 Build and run production locally:
