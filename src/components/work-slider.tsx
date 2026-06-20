@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { caseStudies, type CaseStudy } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -27,7 +27,16 @@ export function WorkSlider() {
   const pages = Math.max(1, caseStudies.length - perView + 1);
 
   // Drag state kept in a ref so listeners don't re-bind.
-  const drag = useRef({ down: false, startX: 0, curX: 0 });
+  // `moved` flags a real drag so the follow-up click doesn't navigate.
+  const drag = useRef({ down: false, startX: 0, curX: 0, moved: false });
+
+  // Suppress a card link click that's really the tail end of a drag/swipe.
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (drag.current.moved) {
+      e.preventDefault();
+      drag.current.moved = false;
+    }
+  };
 
   const cardStep = useCallback(() => {
     const width = firstCardRef.current?.getBoundingClientRect().width ?? 0;
@@ -87,13 +96,14 @@ export function WorkSlider() {
     if (!viewport) return;
 
     const onDown = (clientX: number) => {
-      drag.current = { down: true, startX: clientX, curX: clientX };
+      drag.current = { down: true, startX: clientX, curX: clientX, moved: false };
       setDragging(true);
     };
     const onMove = (clientX: number) => {
       if (!drag.current.down) return;
       drag.current.curX = clientX;
       const dx = clientX - drag.current.startX;
+      if (Math.abs(dx) > 5) drag.current.moved = true;
       applyTransform(-(page * cardStep()) + dx);
     };
     const onUp = () => {
@@ -149,27 +159,41 @@ export function WorkSlider() {
             <article
               key={item.slug}
               ref={index === 0 ? firstCardRef : undefined}
-              className="w-[calc(50%-9px)] shrink-0 overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-[250ms] hover:border-peacock max-[880px]:w-full"
+              className="w-[calc(50%-9px)] shrink-0 overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-[250ms] hover:border-peacock has-[a:focus-visible]:border-peacock max-[880px]:w-full"
             >
-              <div
-                className={cn(
-                  "flex h-[200px] select-none items-center justify-center font-mono text-[13px] text-white/60",
-                  VISUAL_CLASS[item.visual],
-                )}
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                draggable={false}
+                onClick={handleCardClick}
+                aria-label={`${item.title} — visit site (opens in a new tab)`}
+                className="group/card block rounded-2xl focus-visible:outline-none"
               >
-                [ {item.slug} ]
-              </div>
-              <div className="p-6">
-                <div className="mb-[10px] font-mono text-[11px] uppercase tracking-[0.12em] text-peacock">
-                  {item.label}
+                <div
+                  className={cn(
+                    "flex h-[200px] select-none items-center justify-center font-mono text-[13px] text-white/60",
+                    VISUAL_CLASS[item.visual],
+                  )}
+                >
+                  [ {item.slug} ]
                 </div>
-                <h4 className="mb-2 font-display text-xl font-semibold">
-                  {item.title}
-                </h4>
-                <p className="text-sm leading-[1.6] text-mist">
-                  {item.description}
-                </p>
-              </div>
+                <div className="p-6">
+                  <div className="mb-[10px] font-mono text-[11px] uppercase tracking-[0.12em] text-peacock">
+                    {item.label}
+                  </div>
+                  <h4 className="mb-2 font-display text-xl font-semibold">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm leading-[1.6] text-mist">
+                    {item.description}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1 font-mono text-xs text-peacock transition-colors group-hover/card:text-paper">
+                    Visit site
+                    <ArrowUpRight size={14} />
+                  </span>
+                </div>
+              </a>
             </article>
           ))}
         </div>

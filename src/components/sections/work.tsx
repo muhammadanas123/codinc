@@ -9,8 +9,8 @@ export function Work() {
         <SectionHead
           className="reveal"
           eyebrow="// selected work"
-          title="Things we've shipped."
-          sub="A sample of recent projects. Names withheld where clients asked; outcomes are real."
+          title="Things we've contributed and shipped."
+          sub="A sample of products we've helped design, build, and ship — explore them live."
         />
         <WorkSlider />
       </Container>
