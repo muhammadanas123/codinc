@@ -33,7 +33,7 @@ A single-page marketing site for Codinc (product & engineering studio). One rout
 
 **React 19 conventions.** Components use the **ref-as-prop** pattern, not `forwardRef`/`React.ElementRef` (both are legacy here). Type props with `React.ComponentProps<T>` (which includes `ref`) and spread `{...props}` — no explicit ref forwarding or `displayName`. Match this when adding components.
 
-**Server vs client.** Default to server components. Add `"use client"` only for hooks/state/refs/browser APIs — currently `site-header`, `work-slider`, `terminal`, `contact-form`, `team-member-dialog`, `scroll-reveal-provider`, and the `use-scroll-reveal` hook. `layout.tsx` and `page.tsx` stay server components. The page must remain statically prerenderable: read URL state via `window.location.hash` in an effect (see [contact-form.tsx](src/components/contact-form.tsx)), not `useSearchParams`.
+**Server vs client.** Default to server components. Add `"use client"` only for hooks/state/refs/browser APIs — currently `site-header`, `work-slider`, `terminal`, `contact-form`, `team-member-dialog`, `scroll-reveal-provider`, and the `use-scroll-reveal` / `use-contact-form` hooks. `layout.tsx` and `page.tsx` stay server components. The page must remain statically prerenderable: read URL state via `window.location.hash` in an effect (see [use-contact-form.ts](src/hooks/use-contact-form.ts)), not `useSearchParams`.
 
 **Scroll reveal.** Elements get the `.reveal` class and are revealed by an IntersectionObserver in [src/hooks/use-scroll-reveal.ts](src/hooks/use-scroll-reveal.ts) (mounted via `scroll-reveal-provider`). It is fail-safe: content is visible if JS/observer is absent, and the whole system is disabled under `prefers-reduced-motion`.
 
