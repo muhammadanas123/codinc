@@ -14,7 +14,7 @@ nav:
       href: "#work"
     - label: "About"
       href: "#about"
-  cta: "Start a project"
+  cta: "Book a call"
   toggleMenu: "Toggle menu"
   homeAriaLabel: "Codinc home"
 
@@ -26,7 +26,7 @@ hero:
   headingPrefix: "We turn ideas into software that"
   headingEmphasis: "ships"
   paragraph: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
-  ctaPrimary: "Start a project →"
+  ctaPrimary: "Book a call →"
   ctaSecondary: "See our work"
 
 terminal:
@@ -143,7 +143,7 @@ contact:
     emailPlaceholder: "you@company.com"
     messageLabel: "What are you building?"
     messagePlaceholder: "A few sentences about your project…"
-    submit: "Start a project →"
+    submit: "Book a call →"
     hireMessage: "Hi, I'd like to work with {member} on "
     subjectWithName: "Project inquiry — {name}"
     subjectPlain: "Project inquiry"
