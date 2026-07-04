@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
+import { JsonLd } from "@/components/json-ld";
 import "./globals.css";
 
 const spaceGrotesk = localFont({
@@ -55,6 +56,11 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: t("name"),
       type: "website",
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: t("ogDescription"),
+    },
   };
 }
 
@@ -69,6 +75,7 @@ export default async function RootLayout({
       className={`${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        <JsonLd />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
