@@ -17,6 +17,8 @@ export interface Service {
 
 export interface CaseStudy {
   slug: string;
+  /** Filter category — must match an entry in `caseStudies.categories`. */
+  category: string;
   label: string;
   title: string;
   description: string;
@@ -24,20 +26,41 @@ export interface CaseStudy {
   url: string;
   /** Visual gradient variant key (v1–v5). */
   visual: "v1" | "v2" | "v3" | "v4" | "v5";
+  challenge: string;
+  solution: string;
+  result: string;
+  /** Short outcome metrics — illustrative until confirmed. */
+  metrics: string[];
+  tech: string[];
 }
 
-export interface TeamMember {
-  slug: string;
+export interface ProcessStep {
+  num: string;
+  title: string;
+  description: string;
+}
+
+export interface Testimonial {
+  quote: string;
   name: string;
-  role: string;
-  /** Path under /public, e.g. "/team/anas-farooqi.svg". */
-  avatar: string;
-  yearsExperience: number;
-  bio: string;
-  skills: string[];
+  company: string;
+  rating: number;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export interface Stat {
   value: string;
   label: string;
+}
+
+/** Social profile URLs from `site.social`. */
+export interface Social {
+  linkedin: string;
+  github: string;
+  instagram: string;
+  x: string;
 }

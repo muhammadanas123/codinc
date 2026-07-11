@@ -1,5 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
+import type { Social } from "@/lib/content";
+
 /**
  * Organization + WebSite structured data (schema.org), rendered once in the
  * root layout. All values derive from the `site` block in messages/en.yml so
@@ -10,6 +12,8 @@ export async function JsonLd() {
   const t = await getTranslations("site");
   const url = t("url");
   const name = t("name");
+  const social = t.raw("social") as Social;
+  const sameAs = [social.linkedin, social.instagram, social.x].filter(Boolean);
 
   const schema = {
     "@context": "https://schema.org",
@@ -23,6 +27,7 @@ export async function JsonLd() {
         email: t("email"),
         logo: `${url}/icon.svg`,
         slogan: t("tagline"),
+        sameAs,
       },
       {
         "@type": "WebSite",

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/container";
 import { Terminal } from "@/components/terminal";
+import { BookCall } from "@/components/book-call";
 import { Button } from "@/components/ui/button";
 
 export async function Hero() {
@@ -34,11 +35,9 @@ export async function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-[14px]">
-          <Button asChild variant="primary">
-            <a href="#contact">{t("ctaPrimary")}</a>
-          </Button>
+          <BookCall label={t("ctaPrimary")} variant="primary" />
           <Button asChild variant="ghost">
-            <a href="#work">{t("ctaSecondary")}</a>
+            <a href="#case-studies">{t("ctaSecondary")}</a>
           </Button>
         </div>
 

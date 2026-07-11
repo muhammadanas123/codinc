@@ -3,17 +3,32 @@ site:
   tagline: "software, shipped"
   email: "info@codinc.co"
   url: "https://codinc.co"
+  # Cal.com booking link — every "Book a call" CTA points here.
+  # Swap this one line for your real Cal.com event link (e.g. https://cal.com/you/30min).
+  calLink: "https://cal.com/codinc/30min"
   metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
   ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
+  # Social profiles — placeholders; update to your real handles.
+  social:
+    linkedin: "https://www.linkedin.com/company/codinc"
+    github: "https://github.com/codinc"
+    instagram: "https://www.instagram.com/codinc.co"
+    x: "https://x.com/codinc"
 
 nav:
   links:
     - label: "Services"
       href: "#services"
-    - label: "Work"
-      href: "#work"
+    - label: "Case Studies"
+      href: "#case-studies"
     - label: "About"
       href: "#about"
+    - label: "Testimonials"
+      href: "#testimonials"
+    - label: "FAQ"
+      href: "#faq"
+    - label: "Contact"
+      href: "#contact"
   cta: "Book a call"
   toggleMenu: "Toggle menu"
   homeAriaLabel: "Codinc home"
@@ -48,58 +63,109 @@ services:
   sub: "No hand‑offs between strangers. The people who design your product are the ones who build and maintain it."
   items:
     - num: "01"
+      title: "Product & UX Design"
+      description: "Discovery, design systems, and prototypes that turn a rough idea into a product people understand at first glance."
+      tags: ["Figma", "Design Systems", "Prototyping"]
+    - num: "02"
       title: "Web & mobile apps"
       description: "Custom applications built to last — from internal tools to customer‑facing products, on the web and on phones."
       tags: ["React", "Next.js", "React Native"]
-    - num: "02"
+    - num: "03"
+      title: "Backend & APIs"
+      description: "The engine room — APIs, data models, and services built to be fast, secure, and easy to build on top of."
+      tags: ["Node.js", "PostgreSQL", "GraphQL"]
+    - num: "04"
       title: "Cloud & DevOps"
       description: "We set up the infrastructure, pipelines, and monitoring so your software ships often and stays up."
       tags: ["AWS", "Docker", "CI/CD"]
-    - num: "03"
+    - num: "05"
       title: "AI integration"
       description: "Practical AI woven into real products — search, assistants, and automation that earn their place."
       tags: ["LLMs", "RAG", "Automation"]
+    - num: "06"
+      title: "Maintenance & support"
+      description: "We don't disappear at launch. Monitoring, iteration, and a real human when something needs attention."
+      tags: ["Monitoring", "SLAs", "Iteration"]
 
-work:
+ctaMid:
+  title: "Not sure where to start?"
+  sub: "Book a free intro call — we'll help you scope it and tell you honestly if we're the right team for the job."
+  button: "Book a free call →"
+
+# Case studies below describe real projects Codinc contributed to.
+# The challenge/solution/result copy and every `metrics` value are ILLUSTRATIVE
+# placeholders — replace them with figures you're comfortable publishing before launch.
+caseStudies:
   eyebrow: "// selected work"
-  title: "Things we've contributed and shipped."
+  title: "Real results, built end to end."
   sub: "A sample of products we've helped design, build, and ship — explore them live."
   visitSite: "Visit site"
-  previous: "Previous"
-  next: "Next"
-  goToSlide: "Go to slide {number}"
   visitAriaLabel: "{title} — visit site (opens in a new tab)"
+  allLabel: "All"
+  challengeLabel: "Challenge"
+  solutionLabel: "Solution"
+  resultLabel: "Result"
+  categories: ["E‑commerce", "Marketplace", "PropTech"]
   items:
     - slug: "purplecarrot.com"
+      category: "E‑commerce"
       label: "Food · E‑commerce"
       title: "Purple Carrot"
       description: "A plant‑based meal‑kit service — recipes, subscriptions, and a checkout flow tuned to keep weekly orders effortless."
       url: "https://www.purplecarrot.com"
       visual: "v1"
+      challenge: "Weekly meal‑kit orders lived or died on the subscription and checkout flow — every extra step meant lost recurring revenue."
+      solution: "We rebuilt the subscription and checkout experience around fewer taps, clearer plans, and a faster path from recipe to reorder."
+      result: "A smoother weekly reorder loop and a checkout that gets out of the customer's way."
+      metrics: ["↓ 45% checkout drop‑off", "↑ 32% repeat orders"] # TODO: confirm — illustrative
+      tech: ["Next.js", "Node.js", "Stripe", "Claude API", "CI/CD"]
     - slug: "cocoli.com"
+      category: "Marketplace"
       label: "Retail · Marketplace"
       title: "Cocoli"
       description: "A curated marketplace for premium furniture and design, connecting independent sellers with buyers across Europe."
       url: "https://www.cocoli.com/en/de/"
       visual: "v2"
+      challenge: "A two‑sided marketplace had to stay fast and trustworthy across thousands of listings and dozens of independent sellers."
+      solution: "We built a performant catalog, seller tooling, and a checkout that handles multi‑seller carts without friction."
+      result: "A marketplace that scales its catalog while keeping browsing quick and buying simple."
+      metrics: ["10k+ live listings", "↑ 27% conversion"] # TODO: confirm — illustrative
+      tech: ["React", "Node.js", "PostgreSQL", "Algolia", "Claude API"]
     - slug: "colochousing.com"
+      category: "PropTech"
       label: "PropTech · Platform"
-      title: "Colo Housing"
-      description: "A modern co‑living and housing platform that streamlines listings, applications, and tenant management end to end."
+      title: "Coloc Housing"
+      description: "A modern co‑living and housing platform — on web and native iOS and Android apps — that streamlines listings, applications, and tenant management end to end."
       url: "https://www.colochousing.com/"
       visual: "v3"
+      challenge: "Listings, applications, and tenant management were spread across disconnected tools and manual steps."
+      solution: "We unified the whole journey — from listing to signed tenant — into one platform with automated application handling."
+      result: "A single system that takes a resident from first search to move‑in without the spreadsheet chaos."
+      metrics: ["8 hrs/week saved", "1 platform, end to end"] # TODO: confirm — illustrative
+      tech: ["Next.js", "NestJS", "PostgreSQL", "React Native", "Expo"]
     - slug: "crystalcommerce.com"
+      category: "E‑commerce"
       label: "E‑commerce · Platform"
       title: "Crystal Commerce"
       description: "Commerce infrastructure for specialty and hobby retailers, syncing inventory and orders across thousands of storefronts."
       url: "https://www.crystalcommerce.com/"
       visual: "v4"
+      challenge: "Thousands of storefronts needed inventory and orders kept in sync in near real time, without falling over at peak."
+      solution: "We hardened the sync pipelines and monitoring so catalog and order data stay consistent across every channel."
+      result: "Inventory that stays accurate across channels, even under heavy catalog and order volume."
+      metrics: ["1000s of storefronts", "near real‑time sync"] # TODO: confirm — illustrative
+      tech: ["Node.js", "AWS", "Docker", "Redis", "Jenkins", "Claude API"]
 
 about:
   eyebrow: "// who we are"
   title: "Small team. Senior hands. Real ownership."
   paragraph1: "Codinc is a tight engineering studio. We take on a focused number of projects so each one gets people who actually care about the outcome."
   paragraph2: "We work the way good software gets made: short feedback loops, working software early, and a bias for shipping over talking. When we hand something over, it's documented, tested, and yours."
+  points:
+    - "Senior engineers only — no juniors billed as experts."
+    - "Weekly demos and async updates — never radio silence."
+    - "Full code ownership handed to you, documented and tested."
+    - "Honest timelines and straight answers, no surprises."
   stats:
     - value: "40+"
       label: "products shipped"
@@ -110,32 +176,96 @@ about:
     - value: "<24h"
       label: "response time"
 
-team:
-  eyebrow: "// our team"
-  title: "Who you'll actually work with."
-  sub: "A small, senior team of engineers and designers. Tap anyone to see what they bring."
-  viewProfile: "View {name}'s profile"
-  yearsExperience: "{years}+ yrs experience"
-  hireMe: "Hire me →"
-  members:
-    - slug: "anas-farooqi"
-      name: "Anas Farooqi"
-      role: "Founder & CEO"
-      avatar: "/team/anas-farooqi.svg"
-      yearsExperience: 8
-      bio: "Anas founded Codinc to build software the way it should be built — small senior teams, real ownership, and a bias for shipping. He sets the technical direction and stays close to every engagement, making sure each project gets the attention it deserves. Clients keep coming back for the straight answers as much as the code."
-      skills: ["Product Strategy", "Architecture", "TypeScript", "Cloud", "Team Leadership", "React", "NestJS", "Next.js", "Redux", "Supabase", "TypeORM", "Prisma", "TanStack Query", "Sequelize", "AWS", "GCP", "Docker", "Rails", "RAG", "LLMs"]
-    - slug: "bilal-farooqi"
-      name: "Bilal Farooqi"
-      role: "Co‑founder & COO"
-      avatar: "/team/bilal-farooqi.svg"
-      yearsExperience: 5
-      bio: "Bilal runs the operation behind the work — delivery, process, and the day‑to‑day that keeps projects on track. He turns ambitious roadmaps into predictable shipping schedules and is the person clients talk to when they need things to just happen."
-      skills: ["Operations", "Delivery", "Client Success", "Process", "React", "Next.js", "NestJS", "Supabase", "AWS", "Docker", "RAG", "LLMs", "n8n Workflows"]
+process:
+  eyebrow: "// how we work"
+  title: "From first call to production, without the chaos."
+  sub: "A simple, predictable process. You always know what's happening and what comes next."
+  cta: "Book a call →"
+  steps:
+    - num: "01"
+      title: "Discovery"
+      description: "We dig into your goals, users, and constraints — and agree on what \"done\" looks like before we start."
+    - num: "02"
+      title: "Design"
+      description: "Architecture and UX get worked out up front, so we build the right thing, not just build fast."
+    - num: "03"
+      title: "Build"
+      description: "Short sprints with working software every week. You see progress live, not in a slide deck."
+    - num: "04"
+      title: "Ship"
+      description: "Tested, documented, and rolled out safely. Handover is clean and everything is yours."
+    - num: "05"
+      title: "Run"
+      description: "We monitor, iterate, and stay on call — improving the product long after launch."
+
+testimonials:
+  eyebrow: "// client reviews"
+  title: "Teams keep coming back."
+  sub: "A few words from founders and teams we've shipped with."
+  # Representative reviews for layout — replace with real, attributable quotes before launch.
+  stats:
+    - value: "5.0/5"
+      label: "average client rating"
+    - value: "40+"
+      label: "products shipped"
+    - value: "100%"
+      label: "on‑time delivery"
+  items:
+    - quote: "Codinc felt like our own engineering team, not an agency. They shipped faster than we thought possible, and the code was clean enough that our team picked it up without missing a beat."
+      name: "Sarah Whitfield"
+      company: "Northlane"
+      rating: 5
+    - quote: "Straight answers, no fluff. They told us what to cut, what to keep, and then actually delivered it on the date they promised."
+      name: "Daniel Osei"
+      company: "Ledgerly"
+      rating: 5
+    - quote: "We came in with a messy idea and left with a product. The discovery phase alone saved us months of building the wrong thing."
+      name: "Priya Nair"
+      company: "Cascade Health"
+      rating: 5
+    - quote: "What stood out was ownership. When something broke at a bad hour, they were already on it before we even noticed."
+      name: "Marco Bianchi"
+      company: "Fleetwise"
+      rating: 5
+    - quote: "Senior people who actually care. Weekly demos meant zero surprises, and the final handover was fully documented."
+      name: "Emma Larsson"
+      company: "Brightpath"
+      rating: 5
+    - quote: "They wove AI into our product in a way that was genuinely useful, not a gimmick. Our support load dropped noticeably within weeks."
+      name: "James Carter"
+      company: "Supportly"
+      rating: 5
+
+faq:
+  eyebrow: "// faq"
+  title: "Questions, answered."
+  sub: "Everything worth knowing before we work together. Still curious?"
+  askLabel: "Just ask us directly →"
+  items:
+    - question: "What kind of projects do you take on?"
+      answer: "Web and mobile apps, internal tools, platforms, and AI features — from a first MVP to a mature product that needs a serious team. If it's software that needs to be built right and shipped, we're a fit."
+    - question: "How do you run a project?"
+      answer: "Short weekly sprints, each ending in a demo. You get async updates and always know exactly where things stand — no radio silence, no surprises."
+    - question: "What technologies do you work with?"
+      answer: "TypeScript, React, Next.js, React Native, Node.js, and PostgreSQL, deployed on AWS, GCP, or Vercel. For AI and automation we work with LLMs, RAG, n8n, and OpenClaw."
+    - question: "How long does a typical project take?"
+      answer: "Most engagements run 4–12 weeks depending on scope. We'll give you an honest timeline after discovery — and flag it early if anything ever threatens the date."
+    - question: "Who owns the code?"
+      answer: "You do — 100%. Everything is handed over documented and tested, in your repositories and your accounts. No lock‑in, ever."
+    - question: "Do you offer support after launch?"
+      answer: "Yes. We offer retainer‑based monitoring, iteration, and support. Most clients stay with us well past the initial build."
+
+ctaFinal:
+  eyebrow: "// ready when you are"
+  title: "Have something to build? Let's talk."
+  sub: "Book a free 30‑minute call. No pressure — just a clear next step for your project."
+  button: "Book a call →"
 
 contact:
-  heading: "Have something to build?"
+  heading: "Got a project in mind?"
   paragraph: "Tell us what you're working on. We'll tell you honestly if we're the right team for it."
+  bookCta: "Book a call →"
+  orLabel: "or send us a message"
   form:
     nameLabel: "Name"
     namePlaceholder: "Your name"
@@ -143,8 +273,7 @@ contact:
     emailPlaceholder: "you@company.com"
     messageLabel: "What are you building?"
     messagePlaceholder: "A few sentences about your project…"
-    submit: "Book a call →"
-    hireMessage: "Hi, I'd like to work with {member} on "
+    submit: "Send message →"
     subjectWithName: "Project inquiry — {name}"
     subjectPlain: "Project inquiry"
     sending: "Sending…"
@@ -160,5 +289,7 @@ contact:
       — The Codinc team
 
 footer:
+  tagline: "A product & engineering studio. We design, build, and run software that ships."
   contact: "Contact"
+  followLabel: "Follow us"
   copyright: "© 2026 Codinc. All rights reserved."

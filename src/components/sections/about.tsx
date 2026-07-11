@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Check } from "lucide-react";
 
 import { Container } from "@/components/container";
 import type { Stat } from "@/lib/content";
@@ -6,6 +7,7 @@ import type { Stat } from "@/lib/content";
 export async function About() {
   const t = await getTranslations("about");
   const stats = t.raw("stats") as Stat[];
+  const points = t.raw("points") as string[];
 
   return (
     <section id="about" className="pb-24">
@@ -24,6 +26,22 @@ export async function About() {
             <p className="text-[15.5px] leading-[1.75] text-mist">
               {t("paragraph2")}
             </p>
+
+            <ul className="mt-7 grid gap-[14px]">
+              {points.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-3 text-[15px] leading-[1.5] text-mist"
+                >
+                  <Check
+                    size={18}
+                    className="mt-0.5 shrink-0 text-peacock"
+                    strokeWidth={2.5}
+                  />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="reveal grid grid-cols-2 gap-6">
