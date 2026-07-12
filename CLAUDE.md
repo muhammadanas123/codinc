@@ -27,7 +27,7 @@ A single-page marketing site for Codinc (product & engineering studio). One rout
 **Page composition.** [src/app/page.tsx](src/app/page.tsx) composes the section components from [src/components/sections/](src/components/sections/) inside a single `<main>`. [src/app/layout.tsx](src/app/layout.tsx) owns fonts and `metadata`. Component tiers:
 - `components/ui/` — shadcn-style primitives (`Button`, `Card`, `Dialog`).
 - `components/sections/` — full page sections (`hero`, `industries-strip`, `services`, `cta-band`, `case-studies`, `about`, `process`, `testimonials`, `faq`, `contact`, `footer`).
-- `components/` root — compound/shared pieces (`site-header`, `terminal`, `contact-form`, `book-call`, `hero-aurora`, `container`, `section-head`, `brand-mark`).
+- `components/` root — compound/shared pieces (`site-header`, `terminal`, `contact-form`, `book-call`, `hero-code`, `container`, `section-head`, `brand-mark`).
 
 **Theming pipeline (Tailwind v4, CSS-first — there is no `tailwind.config`).** [src/app/globals.css](src/app/globals.css) defines the brand palette once as HSL CSS variables in `:root` (`--peacock`, `--ink`, `--panel`, `--line`, …) plus shadcn semantic tokens (`--primary`, `--card`, …). An `@theme inline { --color-*: hsl(var(--token)) }` block maps those into Tailwind utilities (`bg-peacock`, `text-mist`, `border-border`) and registers fonts/radius/animations. Change a value in `:root` and it propagates to utilities, shadcn tokens, and raw `hsl(var(--…))` usages alike. Animations use `tw-animate-css` (not `tailwindcss-animate`). The `* { @apply border-border }` rule is load-bearing — it sets the default border color (v4 defaults borders to `currentColor`); don't remove it.
 

@@ -5,7 +5,7 @@ site:
   url: "https://codinc.co"
   # Cal.com booking link — every "Book a call" CTA points here.
   # Swap this one line for your real Cal.com event link (e.g. https://cal.com/you/30min).
-  calLink: "https://cal.com/codinc/30min"
+  calLink: "https://cal.com/codinc/intro-call"
   metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
   ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
   # Social profiles — placeholders; update to your real handles.
