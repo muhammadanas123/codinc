@@ -8,12 +8,12 @@ site:
   calLink: "https://cal.com/codinc/intro-call"
   metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
   ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
-  # Social profiles — placeholders; update to your real handles.
+  # Social profiles — add real handles here to show the footer icons again.
   social:
-    linkedin: "https://www.linkedin.com/company/codinc"
-    github: "https://github.com/codinc"
-    instagram: "https://www.instagram.com/codinc.co"
-    x: "https://x.com/codinc"
+    linkedin: ""
+    github: ""
+    instagram: ""
+    x: ""
 
 nav:
   links:

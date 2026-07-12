@@ -16,7 +16,7 @@ export async function SiteFooter() {
     { label: "LinkedIn", href: social.linkedin, Icon: Linkedin },
     { label: "Instagram", href: social.instagram, Icon: Instagram },
     { label: "X", href: social.x, Icon: Twitter },
-  ];
+  ].filter((s) => s.href);
 
   return (
     <footer className="border-t border-line py-6">
