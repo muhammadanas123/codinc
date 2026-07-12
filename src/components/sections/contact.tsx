@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/container";
 import { ContactForm } from "@/components/contact-form";
+import { BookCall } from "@/components/book-call";
 
 export async function Contact() {
   const t = await getTranslations("contact");
@@ -22,7 +23,20 @@ export async function Contact() {
           <h2 className="relative mb-[18px] font-display text-[clamp(28px,4vw,46px)] font-bold tracking-[-0.02em]">
             {t("heading")}
           </h2>
-          <p className="relative mb-2 text-[17px] text-mist">{t("paragraph")}</p>
+          <p className="relative mb-8 text-[17px] text-mist">{t("paragraph")}</p>
+
+          <div className="relative flex justify-center">
+            <BookCall label={t("bookCta")} variant="primary" />
+          </div>
+
+          <div className="relative mx-auto mt-9 flex max-w-[520px] items-center gap-4">
+            <span className="h-px flex-1 bg-line" />
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-mist-dim">
+              {t("orLabel")}
+            </span>
+            <span className="h-px flex-1 bg-line" />
+          </div>
+
           <ContactForm />
           <div className="relative mt-[26px] font-mono text-sm text-peacock">
             {tSite("email")}

@@ -93,6 +93,16 @@
     overflow-x: hidden;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(hsl(var(--mist-dim) / 0.14) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
   ::selection {
     background: hsl(var(--peacock));
     color: #031013;
