@@ -6,8 +6,8 @@ site:
   # Cal.com booking link — every "Book a call" CTA points here.
   # Swap this one line for your real Cal.com event link (e.g. https://cal.com/you/30min).
   calLink: "https://cal.com/codinc/intro-call"
-  metaDescription: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
-  ogDescription: "A product & engineering studio. We design, build, and run web and mobile applications."
+  metaDescription: "Codinc is a product & engineering studio. We design, build, and run web, mobile, and AI-powered software for teams who need it done right — and done."
+  ogDescription: "A product & engineering studio. We design, build, and run web, mobile, and AI-powered software."
   # Social profiles — add real handles here to show the footer icons again.
   social:
     linkedin: ""
@@ -40,7 +40,7 @@ hero:
   eyebrow: "Software studio"
   headingPrefix: "We turn ideas into software that"
   headingEmphasis: "ships"
-  paragraph: "Codinc is a product & engineering studio. We design, build, and run web and mobile applications for teams who need them done right — and done."
+  paragraph: "Codinc is a product & engineering studio. We design, build, and run web, mobile, and AI-powered software for teams who need it done right — and done."
   ctaPrimary: "Book a call →"
   ctaSecondary: "See our work"
 
@@ -73,15 +73,15 @@ services:
     - num: "03"
       title: "Backend & APIs"
       description: "The engine room — APIs, data models, and services built to be fast, secure, and easy to build on top of."
-      tags: ["Node.js", "PostgreSQL", "GraphQL"]
+      tags: ["Node.js", "NestJS", "Ruby on Rails", "Java", ".NET", "PostgreSQL", "GraphQL"]
     - num: "04"
       title: "Cloud & DevOps"
       description: "We set up the infrastructure, pipelines, and monitoring so your software ships often and stays up."
-      tags: ["AWS", "Docker", "CI/CD"]
+      tags: ["AWS", "GCP", "Docker", "CI/CD"]
     - num: "05"
-      title: "AI integration"
-      description: "Practical AI woven into real products — search, assistants, and automation that earn their place."
-      tags: ["LLMs", "RAG", "Automation"]
+      title: "AI & automation"
+      description: "Practical AI woven into real products — automation and workflows, chatbots and assistants, AI agents, AI-powered search (RAG), and voice receptionists that earn their place."
+      tags: ["AI Automation", "Chatbots", "AI Agents", "RAG Search", "Voice AI"]
     - num: "06"
       title: "Maintenance & support"
       description: "We don't disappear at launch. Monitoring, iteration, and a real human when something needs attention."
@@ -243,11 +243,11 @@ faq:
   askLabel: "Just ask us directly →"
   items:
     - question: "What kind of projects do you take on?"
-      answer: "Web and mobile apps, internal tools, platforms, and AI features — from a first MVP to a mature product that needs a serious team. If it's software that needs to be built right and shipped, we're a fit."
+      answer: "Web and mobile apps, internal tools, platforms, and AI — automation, chatbots, agents, and voice receptionists — from a first MVP to a mature product that needs a serious team. If it's software that needs to be built right and shipped, we're a fit."
     - question: "How do you run a project?"
       answer: "Short weekly sprints, each ending in a demo. You get async updates and always know exactly where things stand — no radio silence, no surprises."
     - question: "What technologies do you work with?"
-      answer: "TypeScript, React, Next.js, React Native, Node.js, and PostgreSQL, deployed on AWS, GCP, or Vercel. For AI and automation we work with LLMs, RAG, n8n, and OpenClaw."
+      answer: "TypeScript, React, Next.js, React Native, Node.js, NestJS, Ruby on Rails, Java, and .NET, with PostgreSQL, deployed on AWS, GCP, or Vercel. For AI and automation we work with LLMs, RAG, n8n, and OpenClaw."
     - question: "How long does a typical project take?"
       answer: "Most engagements run 4–12 weeks depending on scope. We'll give you an honest timeline after discovery — and flag it early if anything ever threatens the date."
     - question: "Who owns the code?"
