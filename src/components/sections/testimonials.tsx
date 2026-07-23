@@ -61,13 +61,8 @@ export async function Testimonials() {
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-panel-2 font-mono text-xs text-peacock">
                   {initials(item.name)}
                 </span>
-                <span>
-                  <span className="block font-display text-[15px] font-semibold">
-                    {item.name}
-                  </span>
-                  <span className="block font-mono text-[11px] tracking-[0.04em] text-mist">
-                    {item.company}
-                  </span>
+                <span className="font-display text-[15px] font-semibold">
+                  {item.name}
                 </span>
               </figcaption>
             </figure>
