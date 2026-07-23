@@ -111,6 +111,7 @@ caseStudies:
       category: "E‑commerce"
       label: "Food · E‑commerce"
       title: "Purple Carrot"
+      country: "USA"
       description: "A plant‑based meal‑kit service — recipes, subscriptions, and a checkout flow tuned to keep weekly orders effortless."
       url: "https://www.purplecarrot.com"
       visual: "v1"
@@ -123,6 +124,7 @@ caseStudies:
       category: "Marketplace"
       label: "Retail · Marketplace"
       title: "Cocoli"
+      country: "Germany"
       description: "A curated marketplace for premium furniture and design, connecting independent sellers with buyers across Europe."
       url: "https://www.cocoli.com/en/de/"
       visual: "v2"
@@ -135,6 +137,7 @@ caseStudies:
       category: "PropTech"
       label: "PropTech · Platform"
       title: "Coloc Housing"
+      country: "Belgium"
       description: "A modern co‑living and housing platform — on web and native iOS and Android apps — that streamlines listings, applications, and tenant management end to end."
       url: "https://www.colochousing.com/"
       visual: "v3"
@@ -147,6 +150,7 @@ caseStudies:
       category: "E‑commerce"
       label: "E‑commerce · Platform"
       title: "Crystal Commerce"
+      country: "USA"
       description: "Commerce infrastructure for specialty and hobby retailers, syncing inventory and orders across thousands of storefronts."
       url: "https://www.crystalcommerce.com/"
       visual: "v4"
@@ -213,27 +217,21 @@ testimonials:
   items:
     - quote: "Codinc felt like our own engineering team, not an agency. They shipped faster than we thought possible, and the code was clean enough that our team picked it up without missing a beat."
       name: "Sarah Whitfield"
-      company: "Northlane"
       rating: 5
     - quote: "Straight answers, no fluff. They told us what to cut, what to keep, and then actually delivered it on the date they promised."
       name: "Daniel Osei"
-      company: "Ledgerly"
       rating: 5
     - quote: "We came in with a messy idea and left with a product. The discovery phase alone saved us months of building the wrong thing."
       name: "Priya Nair"
-      company: "Cascade Health"
       rating: 5
     - quote: "What stood out was ownership. When something broke at a bad hour, they were already on it before we even noticed."
       name: "Marco Bianchi"
-      company: "Fleetwise"
       rating: 5
     - quote: "Senior people who actually care. Weekly demos meant zero surprises, and the final handover was fully documented."
       name: "Emma Larsson"
-      company: "Brightpath"
       rating: 5
     - quote: "They wove AI into our product in a way that was genuinely useful, not a gimmick. Our support load dropped noticeably within weeks."
       name: "James Carter"
-      company: "Supportly"
       rating: 5
 
 faq:

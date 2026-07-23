@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/container";
@@ -87,8 +87,14 @@ export function CaseStudies() {
               </a>
 
               <div className="p-6 md:p-8">
-                <div className="mb-2 font-mono text-[11px] uppercase tracking-[0.12em] text-peacock">
-                  {item.label}
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-peacock">
+                    {item.label}
+                  </span>
+                  <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[11px] uppercase tracking-[0.08em] text-mist">
+                    <MapPin size={12} className="text-peacock" />
+                    {item.country}
+                  </span>
                 </div>
                 <h3 className="mb-2 font-display text-[22px] font-semibold tracking-[-0.01em]">
                   {item.title}

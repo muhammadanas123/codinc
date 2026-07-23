@@ -21,6 +21,8 @@ export interface CaseStudy {
   category: string;
   label: string;
   title: string;
+  /** Country where the project is based. */
+  country: string;
   description: string;
   /** External project URL. */
   url: string;
@@ -43,7 +45,6 @@ export interface ProcessStep {
 export interface Testimonial {
   quote: string;
   name: string;
-  company: string;
   rating: number;
 }
 
